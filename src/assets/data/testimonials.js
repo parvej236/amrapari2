@@ -22,7 +22,7 @@ const testimonials = [
       en: 'Session: 2009'
     },
     quantaId: 'Q-0236',
-    image: 'https://images.unsplash.com/photo-1674052353268-6412e0781b4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400'
+    image: 'https://files.quantummethod.org.bd/crop/300/300/media/image/feelings/feelings_shob_shombhob_quanta_parvez_alam_20250116.png'
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const testimonials = [
       en: 'Session: 2019–20'
     },
     quantaId: 'Q-0186',
-    image: 'https://images.unsplash.com/photo-1544168190-79c17527004f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400'
+    image: 'https://files.quantummethod.org.bd/crop/300/300/media/image/feelings/feelings_shob_shombhob_quanta_aungchuthing_marma_20241130.png'
   },
   {
     id: 3,
@@ -72,7 +72,7 @@ const testimonials = [
       en: 'Session: 2021–22'
     },
     quantaId: 'Q-0567',
-    image: 'https://images.unsplash.com/photo-1758521540968-3af0cc2074a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400'
+    image: 'https://files.quantummethod.org.bd/crop/300/300/media/image/feelings/feelings_shob_shombhob_quanta_kysain_u_marman_20241222.png'
   },
   {
     id: 4,
