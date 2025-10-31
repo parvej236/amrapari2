@@ -47,7 +47,7 @@ onUnmounted(() => {
       class="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-8 sm:gap-12 min-h-[auto] lg:min-h-screen">
 
       <!-- Left Column -->
-      <div class="flex-1 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left lg:mt-0">
+      <div class="flex-1 flex flex-col items-center lg:items-start space-y-6  mt-20 text-center lg:text-left lg:mt-0">
         <!-- Badge -->
         <div
           class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-md rounded-full shadow-lg border border-cyan-300/30 justify-center lg:justify-start">
