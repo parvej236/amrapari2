@@ -1,7 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import { useLanguage } from '@/composables/useLanguage';
-import { Sunrise, Trophy, BookOpen } from 'lucide-vue-next';
+import { Sunrise, Trophy, BookOpen, Router } from 'lucide-vue-next';
+import { RouterLink } from 'vue-router';
 
 const { t, language } = useLanguage();
 
@@ -61,10 +62,10 @@ onUnmounted(() => {
 
         <!-- Buttons -->
         <div class="flex flex-col sm:flex-row gap-4">
-          <button
+          <RouterLink to="/success-stories"
             class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all">
             <Trophy class="w-5 h-5" /> {{ t.successStories }}
-          </button>
+          </RouterLink>
 
           <button
             class="flex items-center gap-2 border-2 border-purple-300/60 text-purple-100 hover:bg-purple-500/30 hover:text-white px-8 py-4 rounded-lg transition-all">

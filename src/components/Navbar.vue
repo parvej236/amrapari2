@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import { useLanguage } from '@/composables/useLanguage';
+import { RouterLink } from 'vue-router';
 
 // Import Lucide icons (optional if you already have them set up)
 import { Menu, X, Globe } from 'lucide-vue-next';
@@ -42,7 +43,7 @@ const toggleLanguage = () => {
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8">
           <button @click="scrollToSection('home')" class="nav-btn">{{ t.home }}</button>
-          <button @click="scrollToSection('success')" class="nav-btn">{{ t.success }}</button>
+          <RouterLink to="/success-stories" class="nav-btn">{{ t.success }}</RouterLink>
           <button @click="scrollToSection('tutorials')" class="nav-btn">{{ t.tutorials }}</button>
           <button @click="scrollToSection('campus')" class="nav-btn">{{ t.campus }}</button>
           <button @click="scrollToSection('activities')" class="nav-btn">{{ t.activities }}</button>
