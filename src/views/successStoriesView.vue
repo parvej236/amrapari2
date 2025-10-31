@@ -10,7 +10,10 @@ import {
   Beaker,
   Palette,
   Dumbbell,
-  Music
+  Music,
+  Search,
+  Filter,
+  RefreshCcw
 } from 'lucide-vue-next'
 import { ref, computed } from 'vue'
 import successStories from '@/assets/data/successStories.js'
@@ -25,14 +28,46 @@ defineProps({
 // Language
 const { t, language } = useLanguage()
 
+// Search and Filter
+const searchQuery = ref('')
+const selectedCategory = ref('all')
+
+// Categories array from unique categories in stories
+const categories = computed(() => {
+  const uniqueCategories = [...new Set(successStories.map(story => story.category))]
+  return ['all', ...uniqueCategories]
+})
+
+// Filtered stories based on search and category
+const filteredStories = computed(() => {
+  return successStories.filter(story => {
+    const matchesSearch = language.value === 'bn' 
+      ? (story.titleBn.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+         story.descriptionBn.toLowerCase().includes(searchQuery.value.toLowerCase()))
+      : (story.titleEn.toLowerCase().includes(searchQuery.value.toLowerCase()) ||
+         story.descriptionEn.toLowerCase().includes(searchQuery.value.toLowerCase()))
+    
+    const matchesCategory = selectedCategory.value === 'all' || story.category === selectedCategory.value
+    
+    return matchesSearch && matchesCategory
+  })
+})
+
+// Reset filters
+function resetFilters() {
+  searchQuery.value = ''
+  selectedCategory.value = 'all'
+  currentPage.value = 1
+}
+
 // Pagination
 const currentPage = ref(1)
 const itemsPerPage = 6
-const totalPages = computed(() => Math.ceil(successStories.length / itemsPerPage))
+const totalPages = computed(() => Math.ceil(filteredStories.value.length / itemsPerPage))
 
 const paginatedStories = computed(() => {
   const start = (currentPage.value - 1) * itemsPerPage
-  return successStories.slice(start, start + itemsPerPage)
+  return filteredStories.value.slice(start, start + itemsPerPage)
 })
 
 // Date formatter
@@ -125,6 +160,64 @@ function nextPage() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search and Filter Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <div class="grid md:grid-cols-3 gap-4">
+          <!-- Search -->
+          <div class="relative">
+            <input
+              v-model="searchQuery"
+              type="text"
+              :placeholder="language === 'bn' ? 'খুঁজুন...' : 'Search...'"
+              class="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none"
+            />
+            <button 
+              v-if="searchQuery"
+              @click="searchQuery = ''"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+            >
+              ✕
+            </button>
+          </div>
+
+          <!-- Category Filter -->
+          <div>
+            <select
+              v-model="selectedCategory"
+              class="w-full px-4 py-2.5 rounded-lg border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all outline-none capitalize"
+            >
+              <option value="all">{{ language === 'bn' ? 'সকল বিভাগ' : 'All Categories' }}</option>
+              <option v-for="category in categories.filter(c => c !== 'all')" :key="category" :value="category" class="capitalize">
+                {{ category }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Reset Filters -->
+          <div class="flex items-center">
+            <button
+              @click="resetFilters"
+              class="px-4 py-2.5 border border-gray-300 hover:border-gray-400 rounded-lg text-gray-600 hover:bg-gray-50 transition-all flex items-center gap-2"
+            >
+              <span>{{ language === 'bn' ? 'ফিল্টার রিসেট করুন' : 'Reset Filters' }}</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Results Count -->
+        <div class="mt-4 text-sm text-gray-600">
+          {{ language === 'bn' 
+            ? `মোট ${filteredStories.length}টি ফলাফল পাওয়া গেছে` 
+            : `Found ${filteredStories.length} results` 
+          }}
         </div>
       </div>
     </div>
