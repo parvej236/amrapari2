@@ -71,11 +71,11 @@ onUnmounted(() => {
             <Trophy class="w-5 h-5" /> {{ t.successStories }}
           </RouterLink>
 
-          <button
+          <RouterLink to="/tutorials"
             class="flex items-center gap-2 border-2 border-purple-300/60 text-purple-100 hover:bg-purple-500/30 hover:text-white px-8 py-4 rounded-lg transition-all justify-center sm:justify-start w-full sm:w-auto"
           >
             <BookOpen class="w-5 h-5" /> {{ t.tutorialsButton }}
-          </button>
+          </RouterLink>
         </div>
       </div>
 

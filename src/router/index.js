@@ -3,6 +3,9 @@ import HomeView from '@/views/HomeView.vue';
 import successStoriesView from '@/views/successStoriesView.vue';
 import NotFound from '@/components/NotFound.vue';
 import SuccessDetailsView from '@/views/SuccessDetailsView.vue';
+import TutorialsView from '@/views/TutorialsView.vue';
+import TutorialDetailsView from '@/views/TutorialDetailsView.vue';
+import ActivitiesView from '@/views/ActivitiesView.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +25,21 @@ const router = createRouter({
       path: '/success/:id',
       name: 'SuccessDetails',
       component: SuccessDetailsView
+    },
+    {
+      path: '/tutorials',
+      name: 'tutorials',
+      component: TutorialsView
+    },
+    {
+      path: '/tutorials/:id',
+      name: 'TutorialDetails',
+      component: TutorialDetailsView
+    },
+    {
+      path: '/activities',
+      name: 'Activities',
+      component: ActivitiesView
     },
     {
       path: '/:catchAll(.*)*',

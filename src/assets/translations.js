@@ -99,6 +99,8 @@ export const translations = {
     tutorialsTitle: "টিউটোরিয়াল",
     tutorialsDesc: "কোয়ান্টারা নিজেরাই শেখায় — প্রোগ্রামিং, বিজ্ঞান এক্সপেরিমেন্ট, ক্রিয়েটিভ আর্টস ও বিভিন্ন স্কিল টিউটোরিয়ালের মাধ্যমে।",
     exploreTutorials: "সব টিউটোরিয়াল দেখুন",
+    tutorialNotFound: "টিউটোরিয়াল পাওয়া যায়নি।",
+
     
     // Campus
     campusTitle: "স্বপ্নের ক্যাম্পাস",
@@ -216,6 +218,7 @@ export const translations = {
     tutorialsTitle: "Tutorials",
     tutorialsDesc: "Quantas teach through their own tutorials — covering programming, science experiments, art, and skill-based learning.",
     exploreTutorials: "Explore Tutorials",
+    tutorialNotFound: 'Tutorial not found.',
     
     // Campus
     campusTitle: "Dreaming Campus",
