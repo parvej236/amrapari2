@@ -127,7 +127,7 @@ export const translations = {
     backToHome: "Back to Home",
     
     // Hero Section
-    heroTitle: "We Can, We Will",
+    heroTitle: "We Can",
     heroSubtitle: "The Quantas are ready to lead the world with knowledge, skill, and courage.",
     heroTagline: "They believe — The world is ours.",
     heroMotivation: "Dream, Dare, Achieve",
