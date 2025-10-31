@@ -10,7 +10,7 @@
       </div>
 
       <!-- Contact Section -->
-      <div class="bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 rounded-xl p-6 border border-gray-100 shadow-sm">
+      <div class="bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50 rounded-xl p-6 border border-blue-200 shadow-sm">
         <!-- Contact Info Cards -->
         <div class="grid md:grid-cols-3 gap-4 mb-6">
           <div
@@ -27,9 +27,9 @@
         </div>
 
         <!-- Map Section -->
-        <div class="bg-white rounded-lg p-6 border-t-2 border-green-200">
+        <div class="bg-white rounded-lg p-6 border-t-2 border-blue-600">
           <div class="flex items-center justify-center gap-2 mb-4">
-            <MapPin class="w-5 h-5 text-green-600" />
+            <MapPin class="w-5 h-5 text-blue-600" />
             <h3 class="text-lg text-gray-900">
               {{ language === 'bn' ? 'ক্যাম্পাসের অবস্থান' : 'Campus Locations' }}
             </h3>
@@ -59,7 +59,7 @@
               :class="[
                 'flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all',
                 mapType === 'roadmap'
-                  ? 'bg-gray-800 text-white shadow-md'
+                  ? 'bg-blue-800 text-white shadow-md'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
               ]"
             >
@@ -72,7 +72,7 @@
               :class="[
                 'flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all',
                 mapType === 'satellite'
-                  ? 'bg-gray-800 text-white shadow-md'
+                  ? 'bg-blue-800 text-white shadow-md'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
               ]"
             >

@@ -59,7 +59,7 @@ onUnmounted(() => {
       <div class="text-center mb-12">
         <h2 class="text-4xl sm:text-5xl mb-3 text-gray-900">{{ t.testimonialsTitle }}</h2>
         <p class="text-base text-gray-600 max-w-2xl mx-auto">{{ t.testimonialsSubtitle }}</p>
-        <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-4"></div>
+        <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto mt-4"></div>
       </div>
 
       <!-- Navigation -->
@@ -89,7 +89,7 @@ onUnmounted(() => {
                 />
               </div>
               <div
-                class="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-md"
+                class="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-blue-200 to-blue-600 rounded-full flex items-center justify-center shadow-md"
               >
                 <GraduationCap class="w-3.5 h-3.5 text-white" />
               </div>
@@ -103,19 +103,19 @@ onUnmounted(() => {
             <p class="text-center text-xs text-blue-600 mb-3">{{ testimonial.year[language] }}</p>
 
             <!-- Quote -->
-            <div class="relative mb-4 flex-grow bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-4 border-l-4 border-blue-500">
+            <div class="relative mb-4 flex-grow bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 border-l-4 border-blue-500">
               <div class="absolute -top-1 -left-1 text-5xl text-blue-400 leading-none font-serif">"</div>
               <p class="text-center text-base text-gray-900 font-bold italic leading-relaxed px-3 pt-2">
                 {{ testimonial.quote[language] }}
               </p>
-              <div class="absolute -bottom-2 -right-1 text-5xl text-purple-400 leading-none font-serif rotate-180">"</div>
+              <div class="absolute -bottom-2 -right-1 text-5xl text-blue-400 leading-none font-serif rotate-180">"</div>
             </div>
 
             <!-- Session & Quanta ID -->
             <div class="pt-3 border-t border-gray-100">
               <div class="flex flex-col items-center gap-1 text-xs text-gray-400">
                 <span>{{ testimonial.session[language] }}</span>
-                <span class="text-blue-500">{{ testimonial.quantaId }}</span>
+                <span class="text-gray-800 font-bold">{{ testimonial.quantaId }}</span>
               </div>
             </div>
           </div>
@@ -139,7 +139,7 @@ onUnmounted(() => {
           :class="[
             'transition-all duration-300 rounded-full',
             currentPage === index - 1
-              ? 'w-8 h-2 bg-gradient-to-r from-blue-600 to-purple-600'
+              ? 'w-8 h-2 bg-gradient-to-r from-blue-600 to-blue-400'
               : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
           ]"
         />

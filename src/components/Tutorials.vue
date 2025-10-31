@@ -47,7 +47,7 @@ const tutorialCategories = computed(() => [
       <div class="text-center">
         <RouterLink
           to="/tutorials"
-          class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full shadow-md text-sm"
+          class="bg-blue-600 hover:bg-blue-800 text-white px-6 py-2 rounded-full shadow-md text-sm"
         >
           {{ t.exploreTutorials }}
       </RouterLink>
