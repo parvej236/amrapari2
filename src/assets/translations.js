@@ -9,6 +9,7 @@ export const translations = {
     campus: "ক্যাম্পাস",
     contact: "যোগাযোগ",
     backToHome: "হোমে ফিরুন",
+    backToSuccess: "সাফল্যে ফিরুন",
     
     // Hero Section
     heroTitle: "আমরা পারি",
@@ -125,6 +126,7 @@ export const translations = {
     campus: "Campus",
     contact: "Contact",
     backToHome: "Back to Home",
+    backToSuccess: "Back to Success",
     
     // Hero Section
     heroTitle: "We Can",

@@ -279,10 +279,12 @@ const categoryColors = {
               {{ language === 'bn' ? story.descriptionBn : story.descriptionEn }}
             </p>
 
-            <button @click="onViewDetail(story)"
-              class="mt-4 w-full border border-blue-500 text-blue-600 hover:bg-blue-100 py-2 rounded-md transition">
-              {{ t.readMore }}
+            <button @click="$router.push({ name: 'SuccessDetails', params: { id: story.id } })"
+              class="mt-4 w-full border border-blue-500 text-blue-600 hover:bg-blue-100 py-2 rounded-md transition flex items-center justify-center gap-2">
+              <span>{{ t.readMore }}</span>
+              <ArrowRight class="w-4 h-4" />
             </button>
+
           </div>
         </div>
       </div>
