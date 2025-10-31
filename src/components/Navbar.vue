@@ -28,8 +28,8 @@ const toggleLanguage = () => {
         <!-- Logo -->
         <RouterLink class="flex items-center gap-3 cursor-pointer" to="/">
           <img src="https://i.postimg.cc/yNjNMBdv/quantum-logo.png" alt="Logo" class="h-12 w-12" />
-          <span class="text-gray-800 text-lg">
-            {{ language === 'bn' ? 'আমরা পারি' : 'We Can, We Will' }}
+          <span class="text-blue-800 text-2xl sm:text-3xl font-bold">
+            {{ language === 'bn' ? 'আমরা পারি' : 'We Can' }}
           </span>
         </RouterLink>
 
@@ -66,7 +66,7 @@ const toggleLanguage = () => {
 
         <!-- Mobile Controls -->
         <div class="md:hidden flex items-center gap-3">
-          <button @click="toggleLanguage" class="px-2 py-1 rounded-md bg-green-50 text-green-700">
+          <button @click="toggleLanguage" class="px-2 py-1 rounded-md bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
             {{ language === 'bn' ? 'Bn' : 'En' }}
           </button>
           <button @click="isOpen = !isOpen" class="text-gray-700">
@@ -78,27 +78,41 @@ const toggleLanguage = () => {
 
     <!-- Mobile Menu -->
     <transition name="fade">
-      <div v-if="isOpen" class="md:hidden bg-white border-t">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <button @click="scrollToSection('home')" class="mobile-nav-btn">{{ t.home }}</button>
-          <button @click="scrollToSection('success')" class="mobile-nav-btn">{{ t.success }}</button>
-          <button @click="scrollToSection('tutorials')" class="mobile-nav-btn">{{ t.tutorials }}</button>
-          <button @click="scrollToSection('campus')" class="mobile-nav-btn">{{ t.campus }}</button>
-          <button @click="scrollToSection('activities')" class="mobile-nav-btn">{{ t.activities }}</button>
-          <button @click="scrollToSection('contact')" class="mobile-nav-btn">{{ t.contact }}</button>
-        </div>
+      <div v-if="isOpen" class="md:hidden bg-white border-t border-gray-200">
+        <RouterLink to="/"
+          :class="['block nav-btn mobile-nav-btn', isActiveLink('/') ? 'bg-blue-50 text-blue-800' : '']"
+          @click="isOpen = false">
+          {{ t.home }}</RouterLink>
+        <RouterLink to="/success-stories"
+          :class="['block nav-btn mobile-nav-btn', isActiveLink('/success-stories') ? 'bg-blue-50 text-blue-800' : '']"
+          @click="isOpen = false">
+          {{ t.success }}</RouterLink>
+        <RouterLink to="/tutorials"
+          :class="['block nav-btn mobile-nav-btn', isActiveLink('/tutorials') ? 'bg-blue-50 text-blue-800' : '']"
+          @click="isOpen = false">
+          {{ t.tutorials }}</RouterLink>
+        <RouterLink to="/campus"
+          :class="['block nav-btn mobile-nav-btn', isActiveLink('/campus') ? 'bg-blue-50 text-blue-800' : '']"
+          @click="isOpen = false">
+          {{ t.campus }}</RouterLink>
+        <RouterLink to="/activities"
+          :class="['block nav-btn mobile-nav-btn', isActiveLink('/activities') ? 'bg-blue-50 text-blue-800' : '']"
+          @click="isOpen = false">
+          {{ t.activities }}</RouterLink>
+        <RouterLink to="/contact"
+          :class="['block nav-btn mobile-nav-btn', isActiveLink('/contact') ? 'bg-blue-50 text-blue-800' : '']"
+          @click="isOpen = false">
+          {{ t.contact }}</RouterLink>
       </div>
+
     </transition>
   </nav>
 </template>
 
 <style scoped>
-.nav-btn {
-  @apply text-gray-700 hover:text-green-600 transition-colors duration-200;
-}
 
 .mobile-nav-btn {
-  @apply block w-full text-left px-3 py-2 text-gray-700 hover:bg-green-50 rounded-md transition-colors duration-200;
+  @apply block w-full text-left px-3 py-2 text-gray-700 hover:bg-blue-100 rounded-md transition-colors duration-200;
 }
 
 .fade-enter-active,
