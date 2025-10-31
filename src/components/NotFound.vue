@@ -23,7 +23,7 @@
       <!-- Button -->
       <button 
         @click="$router.push('/')"
-        class="px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg shadow-lg hover:bg-indigo-700 transition-all animate-fadeIn delay-400">
+        class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-lg hover:bg-blue-700 transition-all animate-fadeIn delay-400">
         Return Home
       </button>
     </div>
