@@ -2,11 +2,7 @@
 import { useLanguage } from '@/composables/useLanguage';
 import { PlayCircle, Code2, Beaker, Paintbrush, Wrench } from 'lucide-vue-next';
 import { computed } from 'vue';
-
-// Props
-defineProps({
-  onNavigateToTutorials: Function
-});
+import { RouterLink } from 'vue-router';
 
 const { t } = useLanguage();
 
@@ -49,12 +45,12 @@ const tutorialCategories = computed(() => [
 
       <!-- Explore Button -->
       <div class="text-center">
-        <button
-          @click="$props.onNavigateToTutorials?.()"
+        <RouterLink
+          to="/tutorials"
           class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full shadow-md text-sm"
         >
           {{ t.exploreTutorials }}
-        </button>
+      </RouterLink>
       </div>
     </div>
   </section>

@@ -2,6 +2,7 @@
 import { useLanguage } from '@/composables/useLanguage';
 import { Trophy, Award, Medal, Star } from 'lucide-vue-next';
 import { ref, computed } from 'vue';
+import { RouterLink } from 'vue-router'
 
 // Props
 defineProps({
@@ -44,12 +45,12 @@ const achievements = computed(() => [
 
       <!-- Button -->
       <div class="text-center">
-        <button
-          @click="$props.onNavigateToSuccess?.()"
+        <RouterLink
+          to="/success-stories"
           class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full shadow-md text-sm"
         >
           {{ t.viewAll }}
-        </button>
+        </RouterLink>
       </div>
     </div>
   </section>
