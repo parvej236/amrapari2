@@ -59,7 +59,7 @@ const toggleLanguage = () => {
             <Globe class="w-4 h-4 text-gray-600" />
             <button @click="toggleLanguage"
               class="flex items-center gap-2 px-3 py-1.5 rounded-md bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
-              {{ language === 'bn' ? 'Bn' : 'En' }}
+              {{ language === 'bn' ? 'En' : 'Bn' }}
             </button>
           </div>
         </div>
@@ -67,7 +67,7 @@ const toggleLanguage = () => {
         <!-- Mobile Controls -->
         <div class="md:hidden flex items-center gap-3">
           <button @click="toggleLanguage" class="px-2 py-1 rounded-md bg-blue-100 text-blue-800 hover:bg-blue-200 transition-colors">
-            {{ language === 'bn' ? 'Bn' : 'En' }}
+            {{ language === 'bn' ? 'En' : 'Bn' }}
           </button>
           <button @click="isOpen = !isOpen" class="text-gray-700">
             <component :is="isOpen ? X : Menu" class="h-6 w-6" />

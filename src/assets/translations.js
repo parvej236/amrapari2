@@ -18,7 +18,7 @@ export const translations = {
     heroMotivation: "স্বপ্ন দেখো, সাহস করো, জয় করো",
     viewVision: "আমাদের ভিশন দেখুন",
     contactUs: "যোগাযোগ করুন",
-    successStories: "সাফল্যের গল্প",
+    successStories: "সাফল্য",
     tutorialsButton: "টিউটোরিয়াল",
     
     // Testimonials Section
@@ -137,7 +137,7 @@ export const translations = {
     heroMotivation: "Dream, Dare, Achieve",
     viewVision: "View Our Vision",
     contactUs: "Contact Us",
-    successStories: "Success Stories",
+    successStories: "Success",
     tutorialsButton: "Tutorials",
     
     // Testimonials Section
