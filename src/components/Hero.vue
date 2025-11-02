@@ -45,15 +45,15 @@ onUnmounted(() => {
 
     <!-- Content -->
     <div
-      class="relative z-10  bg-gray-500/20 flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-8 sm:gap-12 min-h-[auto] lg:min-h-screen">
+      class="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-8 sm:gap-12 min-h-[auto] lg:min-h-screen">
 
       <!-- Left Column -->
-      <div class="flex-1 flex flex-col bg-green-500/30 items-center lg:items-start space-y-6 text-center lg:text-left lg:mt-0">
+      <div class="flex-1 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left lg:mt-0">
         <!-- Badge -->
         <div
           class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-md rounded-full shadow-lg border border-cyan-300/30 justify-center lg:justify-start">
           <Sunrise class="w-4 h-4 text-yellow-300 animate-pulse" />
-          <span class="text-white text-sm font-medium">{{ t.heroMotivation }} hi</span>
+          <span class="text-white text-sm font-medium">{{ t.heroMotivation }}</span>
         </div>
 
         <!-- Titles -->
@@ -81,7 +81,7 @@ onUnmounted(() => {
       </div>
 
       <!-- Right Column -->
-      <div class="flex-1 flex items-center justify-center bg-green-300/10 mt-2 sm:mt-10 lg:mt-0">
+      <div class="flex-1 flex items-center justify-center mt-2 sm:mt-10 lg:mt-0">
         <div class="w-64 h-64 sm:w-72 sm:h-72 relative rounded-full overflow-hidden shadow-2xl">
           <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-full"
             style="transform: scale(1.8);">
