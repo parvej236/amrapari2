@@ -7,9 +7,10 @@ import { RouterLink } from 'vue-router';
 const { t, language } = useLanguage();
 
 const activities = [
-  { bn: 'আমরা পারি আইসিটি', en: 'We Can ICT' },
-  { bn: 'আমরা পারি বিজ্ঞান', en: 'We Can Science' },
-  { bn: 'মেধা সৃজন', en: 'Creativity Club' },
+  { bn: 'আইসিটি', en: 'ICT' },
+  { bn: 'বিজ্ঞান', en: 'Science' },
+  { bn: 'রোবটিক্স', en: 'Robotics' },
+  { bn: 'মেধা সৃজন', en: 'Cultural' },
   { bn: 'স্পোর্টস', en: 'Sports' },
   { bn: 'ব্যান্ড ও কুচকাওয়াজ', en: 'Band & Parade' }
 ];
@@ -44,15 +45,15 @@ onUnmounted(() => {
 
     <!-- Content -->
     <div
-      class="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-8 sm:gap-12 min-h-[auto] lg:min-h-screen">
+      class="relative z-10  bg-gray-500/20 flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-8 sm:gap-12 min-h-[auto] lg:min-h-screen">
 
       <!-- Left Column -->
-      <div class="flex-1 flex flex-col items-center lg:items-start space-y-6  mt-20 text-center lg:text-left lg:mt-0">
+      <div class="flex-1 flex flex-col bg-green-500/30 items-center lg:items-start space-y-6 text-center lg:text-left lg:mt-0">
         <!-- Badge -->
         <div
           class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-md rounded-full shadow-lg border border-cyan-300/30 justify-center lg:justify-start">
           <Sunrise class="w-4 h-4 text-yellow-300 animate-pulse" />
-          <span class="text-white text-sm font-medium">{{ t.heroMotivation }}</span>
+          <span class="text-white text-sm font-medium">{{ t.heroMotivation }} hi</span>
         </div>
 
         <!-- Titles -->
@@ -66,13 +67,13 @@ onUnmounted(() => {
         <div class="flex flex-row gap-4 justify-center lg:justify-start w-full">
           <RouterLink
             to="/success-stories"
-            class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all justify-center sm:justify-start w-full sm:w-auto"
+            class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-2 rounded-full shadow-lg hover:shadow-xl transition-all justify-center sm:justify-start w-full sm:w-auto"
           >
             <Trophy class="w-5 h-5" /> {{ t.successStories }}
           </RouterLink>
 
           <RouterLink to="/tutorials"
-            class="flex items-center gap-2 border-2 border-purple-300/60 text-purple-100 hover:bg-purple-500/30 hover:text-white px-8 py-4 rounded-lg transition-all justify-center sm:justify-start w-full sm:w-auto"
+            class="flex items-center gap-2 border-2 border-purple-300/60 text-purple-100 hover:bg-purple-500/30 hover:text-white px-4 py-2 rounded-full transition-all justify-center sm:justify-start w-full sm:w-auto"
           >
             <BookOpen class="w-5 h-5" /> {{ t.tutorialsButton }}
           </RouterLink>
@@ -80,7 +81,7 @@ onUnmounted(() => {
       </div>
 
       <!-- Right Column -->
-      <div class="flex-1 flex items-center justify-center mt-6 sm:mt-10 lg:mt-0">
+      <div class="flex-1 flex items-center justify-center bg-green-300/10 mt-2 sm:mt-10 lg:mt-0">
         <div class="w-64 h-64 sm:w-72 sm:h-72 relative rounded-full overflow-hidden shadow-2xl">
           <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-full"
             style="transform: scale(1.8);">

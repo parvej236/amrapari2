@@ -28,7 +28,7 @@ const toggleLanguage = () => {
         <!-- Logo -->
         <RouterLink class="flex items-center gap-3 cursor-pointer" to="/">
           <img src="https://i.postimg.cc/yNjNMBdv/quantum-logo.png" alt="Logo" class="h-12 w-12" />
-          <span class="text-blue-800 text-2xl sm:text-3xl font-bold">
+          <span class="text-blue-800 text-2xl sm:text-3xl font-bold md:hidden">
             {{ language === 'bn' ? 'আমরা পারি' : 'We Can' }}
           </span>
         </RouterLink>
