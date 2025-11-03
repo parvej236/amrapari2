@@ -1,36 +1,54 @@
 <template>
-  <section id="contact" class="py-8 bg-white">
+  <section id="contact" class="py-8 bg-white dark:bg-gray-950 transition-colors duration-500">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Title -->
       <div class="text-center mb-6">
-        <h2 class="text-2xl sm:text-3xl mb-2 text-gray-900">
+        <h2 class="text-2xl sm:text-3xl mb-2 text-gray-900 dark:text-gray-100">
           {{ t.contactTitle }}
         </h2>
-        <div class="w-16 h-0.5 bg-gradient-to-r from-green-600 to-blue-600 mx-auto"></div>
+        <div
+          class="w-16 h-0.5 bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-400 dark:to-blue-400 mx-auto rounded-full"
+        ></div>
       </div>
 
       <!-- Contact Section -->
-      <div class="bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50 rounded-xl p-6 border border-blue-200 shadow-sm">
+      <div
+        class="rounded-xl p-6 border shadow-sm border-gray-200 dark:border-gray-700 bg-gradient-to-br from-blue-50 via-purple-50 to-blue-50 dark:from-gray-900/30 dark:via-gray-900/20 dark:to-gray-900/30 transition-colors"
+      >
         <!-- Contact Info Cards -->
         <div class="grid md:grid-cols-3 gap-4 mb-6">
           <div
             v-for="(item, index) in contactInfo"
             :key="index"
-            class="bg-white rounded-lg p-4 hover:shadow-md transition-shadow text-center"
+            class="rounded-lg p-4 text-center transition-shadow hover:shadow-md bg-white dark:bg-gray-800"
           >
-            <div :class="['inline-flex items-center justify-center w-12 h-12 rounded-full mb-3', item.bg]">
-              <component :is="item.icon" :class="['w-6 h-6', item.color]" />
+            <div
+              :class="[
+                'inline-flex items-center justify-center w-12 h-12 rounded-full mb-3',
+                item.bg,
+                item.bg === 'bg-green-50' ? 'dark:bg-green-900' : '',
+                item.bg === 'bg-blue-50' ? 'dark:bg-blue-900' : '',
+                item.bg === 'bg-purple-50' ? 'dark:bg-purple-900' : ''
+              ]"
+            >
+              <component
+                :is="item.icon"
+                :class="['w-6 h-6', item.color, 
+                        item.color === 'text-green-600' ? 'dark:text-green-400' : '',
+                        item.color === 'text-blue-600' ? 'dark:text-blue-400' : '',
+                        item.color === 'text-purple-600' ? 'dark:text-purple-400' : '']"
+              />
             </div>
-            <h3 class="text-sm text-gray-900 mb-1">{{ item.title }}</h3>
-            <p class="text-xs text-gray-600">{{ item.info }}</p>
+            <h3 class="text-sm text-gray-900 dark:text-gray-100 mb-1">{{ item.title }}</h3>
+            <p class="text-xs text-gray-600 dark:text-gray-400">{{ item.info }}</p>
           </div>
         </div>
 
         <!-- Map Section -->
-        <div class="bg-white rounded-lg p-6 border-t-2 border-blue-600">
+        <div class="rounded-lg p-6 border-t-2 border-blue-600 dark:border-blue-400 mb-6 bg-white dark:bg-gray-800 transition-colors">
           <div class="flex items-center justify-center gap-2 mb-4">
-            <MapPin class="w-5 h-5 text-blue-600" />
-            <h3 class="text-lg text-gray-900">
+            <MapPin class="w-5 h-5 text-blue-600 dark:text-blue-400" />
+            <h3 class="text-lg text-gray-900 dark:text-gray-100">
               {{ language === 'bn' ? 'ক্যাম্পাসের অবস্থান' : 'Campus Locations' }}
             </h3>
           </div>
@@ -43,9 +61,8 @@
               @click="selectedCampus = campus.id"
               :class="[
                 'px-4 py-2 rounded-full text-sm transition-all',
-                selectedCampus === campus.id
-                  ? campus.active
-                  : campus.inactive,
+                selectedCampus === campus.id ? campus.active : campus.inactive,
+                'dark:shadow-none'
               ]"
             >
               {{ t[campus.label] }}
@@ -59,8 +76,8 @@
               :class="[
                 'flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all',
                 mapType === 'roadmap'
-                  ? 'bg-blue-800 text-white shadow-md'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
+                  ? 'bg-blue-800 text-white shadow-md dark:bg-blue-600'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
               ]"
             >
               <Map class="w-4 h-4" />
@@ -72,8 +89,8 @@
               :class="[
                 'flex items-center gap-2 px-4 py-2 rounded-lg text-sm transition-all',
                 mapType === 'satellite'
-                  ? 'bg-blue-800 text-white shadow-md'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
+                  ? 'bg-blue-800 text-white shadow-md dark:bg-blue-600'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600'
               ]"
             >
               <Satellite class="w-4 h-4" />
@@ -82,7 +99,7 @@
           </div>
 
           <!-- Google Maps -->
-          <div class="relative w-full h-96 rounded-lg overflow-hidden shadow-lg border-2 border-gray-200">
+          <div class="relative w-full h-96 rounded-lg overflow-hidden shadow-lg border-2 border-gray-200 dark:border-gray-700">
             <!-- Hikman Campus -->
             <iframe
               v-if="selectedCampus === 'hikman'"
@@ -116,8 +133,8 @@
 
           <!-- Location Info -->
           <div class="mt-4 text-center">
-            <p class="text-sm text-gray-700 mb-1">Sarai, Lama, Bandarban, Bangladesh</p>
-            <p class="text-xs text-gray-500 mb-3">
+            <p class="text-sm text-gray-700 dark:text-gray-300 mb-1">Sarai, Lama, Bandarban, Bangladesh</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">
               {{ language === 'bn' ? 'বান্দরবানের সুন্দর পাহাড়ে অবস্থিত' : 'Nestled in the beautiful hills of Bandarban' }}
             </p>
 
@@ -125,7 +142,7 @@
               :href="getMapLink"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm transition-all shadow-md hover:shadow-lg"
+              class="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white rounded-lg text-sm transition-all shadow-md hover:shadow-lg"
             >
               <MapPin class="w-4 h-4" />
               {{ language === 'bn' ? 'গুগল ম্যাপে খুলুন' : 'Open in Google Maps' }}
@@ -137,7 +154,7 @@
         <div class="mt-6 text-center">
           <a
             href="mailto:cosmoschool@quantummethod.org.bd"
-            class="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-full hover:shadow-lg transition-all text-sm"
+            class="inline-flex items-center gap-2 px-5 py-2 bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-500 dark:to-blue-500 text-white rounded-full hover:shadow-lg transition-all text-sm"
           >
             <Mail class="w-4 h-4" />
             Send Email
@@ -164,20 +181,20 @@ const campuses = [
   {
     id: 'hikman',
     label: 'campus1',
-    active: 'bg-green-600 text-white shadow-md',
-    inactive: 'bg-green-100 text-green-700 hover:bg-green-200',
+    active: 'bg-green-600 text-white shadow-md dark:bg-green-500',
+    inactive: 'bg-green-100 text-green-700 hover:bg-green-200 dark:bg-green-900 dark:text-green-400 dark:hover:bg-green-800',
   },
   {
     id: 'fikran',
     label: 'campus2',
-    active: 'bg-blue-600 text-white shadow-md',
-    inactive: 'bg-blue-100 text-blue-700 hover:bg-blue-200',
+    active: 'bg-blue-600 text-white shadow-md dark:bg-blue-500',
+    inactive: 'bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-400 dark:hover:bg-blue-800',
   },
   {
     id: 'ikran',
     label: 'campus3',
-    active: 'bg-purple-600 text-white shadow-md',
-    inactive: 'bg-purple-100 text-purple-700 hover:bg-purple-200',
+    active: 'bg-purple-600 text-white shadow-md dark:bg-purple-500',
+    inactive: 'bg-purple-100 text-purple-700 hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-400 dark:hover:bg-purple-800',
   },
 ]
 

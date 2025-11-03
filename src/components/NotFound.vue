@@ -1,29 +1,42 @@
 <template>
-  <section class="relative min-h-screen flex flex-col items-center justify-center bg-gray-50 overflow-hidden px-4">
+  <section
+    class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4
+           bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
+  >
     <!-- Animated abstract shapes -->
-    <div class="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-tr from-indigo-400 via-purple-400 to-pink-400 rounded-full opacity-30 animate-blob"></div>
-    <div class="absolute -bottom-32 -right-32 w-80 h-80 bg-gradient-to-tr from-pink-300 via-purple-300 to-indigo-300 rounded-full opacity-30 animate-blob animation-delay-2000"></div>
+    <div
+      class="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-30 animate-blob
+             bg-gradient-to-tr from-indigo-400 via-purple-400 to-pink-400
+             dark:from-indigo-700 dark:via-purple-700 dark:to-pink-700 transition-colors"
+    ></div>
+    <div
+      class="absolute -bottom-32 -right-32 w-80 h-80 rounded-full opacity-30 animate-blob animation-delay-2000
+             bg-gradient-to-tr from-pink-300 via-purple-300 to-indigo-300
+             dark:from-pink-600 dark:via-purple-600 dark:to-indigo-600 transition-colors"
+    ></div>
 
     <!-- Main Content -->
     <div class="relative z-10 text-center max-w-lg">
-      <!-- SVG professional illustration -->
-      <svg class="w-48 h-48 mx-auto mb-6" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="256" cy="256" r="256" fill="#f3f4f6"/>
-        <path d="M256 128c-70.7 0-128 57.3-128 128s57.3 128 128 128 128-57.3 128-128-57.3-128-128-128z" fill="#e5e7eb"/>
+      <!-- SVG illustration -->
+      <svg class="w-48 h-48 mx-auto mb-6 transition-colors" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="256" cy="256" r="256" class="fill-gray-200 dark:fill-gray-800 transition-colors"/>
+        <path d="M256 128c-70.7 0-128 57.3-128 128s57.3 128 128 128 128-57.3 128-128-57.3-128-128-128z"
+              class="fill-gray-300 dark:fill-gray-700 transition-colors"/>
         <path d="M200 256l112 0" stroke="#6366f1" stroke-width="16" stroke-linecap="round"/>
         <path d="M256 200l0 112" stroke="#6366f1" stroke-width="16" stroke-linecap="round"/>
       </svg>
 
       <!-- Text -->
-      <h1 class="text-6xl font-bold text-gray-900 mb-4 animate-fadeIn">404</h1>
-      <p class="text-lg text-gray-600 mb-6 animate-fadeIn delay-200">
+      <h1 class="text-6xl font-bold mb-4 text-gray-900 dark:text-white animate-fadeIn">404</h1>
+      <p class="text-lg mb-6 text-gray-600 dark:text-gray-300 animate-fadeIn delay-200">
         The page you are looking for cannot be found. It may have been moved or deleted.
       </p>
 
       <!-- Button -->
-      <button 
+      <button
         @click="$router.push('/')"
-        class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-lg hover:bg-blue-700 transition-all animate-fadeIn delay-400">
+        class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg shadow-lg hover:bg-blue-700 transition-all animate-fadeIn delay-400"
+      >
         Return Home
       </button>
     </div>
@@ -31,11 +44,11 @@
 </template>
 
 <script setup>
-// No extra logic required for static 404 page
+// No additional logic needed
 </script>
 
 <style scoped>
-/* Professional abstract blob animation */
+/* Blob animation */
 @keyframes blob {
   0%, 100% { transform: translate(0px, 0px) scale(1); }
   33% { transform: translate(20px, -30px) scale(1.1); }

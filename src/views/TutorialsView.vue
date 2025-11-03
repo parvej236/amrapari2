@@ -131,9 +131,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gray-50 pt-16">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-900 pt-16 transition-colors duration-300">
     <!-- Hero Header -->
-    <div class="relative bg-gradient-to-r from-blue-600 to-blue-400 text-white py-2 overflow-hidden">
+    <div class="relative bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-800 dark:to-blue-600 text-white py-2 overflow-hidden">
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
         <button @click="$router.push('/')"
           class="flex items-center text-white bg-white/20 hover:bg-white/40 my-2 mb-4 px-3 py-2 rounded-md transition">
@@ -143,7 +143,7 @@ onMounted(() => {
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight animate-fadeInUp">
           {{ lang === 'bn' ? 'টিউটোরিয়াল' : 'Tutorials' }}
         </h1>
-        <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-blue-100 animate-fadeInUp delay-200">
+        <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-blue-100 dark:text-blue-200 animate-fadeInUp delay-200">
           {{ lang === 'bn'
             ? 'প্রযুক্তি, বিজ্ঞান, সৃজনশীলতা, খেলাধুলা এবং সংগীতে দক্ষতা অর্জনের জন্য কোয়ান্টাদের তৈরি টিউটোরিয়াল'
             : 'Tutorials created to develop skills in technology, science, creativity, sports, and music.' }}
@@ -152,36 +152,38 @@ onMounted(() => {
     </div>
 
     <!-- Filters & Search -->
-    <div class="bg-white shadow-md sticky top-16 z-40">
+    <div class="bg-white dark:bg-gray-800 shadow-md sticky top-16 z-40 transition-colors duration-300">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center gap-2">
-        <span class="text-xs text-gray-600 shrink-0 hidden sm:inline">
+        <span class="text-xs text-gray-600 dark:text-gray-300 shrink-0 hidden sm:inline">
           {{ lang === 'bn' ? 'বিভাগ:' : 'Filter:' }}
         </span>
 
         <button v-if="showLeftArrow" @click="handleScroll('left')"
-          class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center hover:bg-blue-200">
-          <ChevronLeft class="w-4 h-4 text-blue-700" />
+          class="w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-700 flex items-center justify-center hover:bg-blue-200 dark:hover:bg-blue-600 transition-colors">
+          <ChevronLeft class="w-4 h-4 text-blue-700 dark:text-blue-200" />
         </button>
 
         <div ref="scrollContainerRef" class="flex gap-2 overflow-x-auto scrollbar-hide flex-1 pb-1">
           <button v-for="cat in categories" :key="cat.id" @click="selectedCategory = cat.id"
             :class="['flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-shrink shrink-0',
-              selectedCategory === cat.id ? `${cat.color} text-white shadow-md` : 'bg-gray-100 text-gray-700 hover:bg-blue-200']">
+              selectedCategory === cat.id
+                ? `${cat.color} text-white shadow-md`
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-blue-200 dark:hover:bg-blue-600']">
             <component :is="cat.icon" class="w-3.5 h-3.5" />
             <span class="text-xs">{{ lang === 'bn' ? cat.labelBn : cat.labelEn }}</span>
           </button>
         </div>
 
         <button v-if="showRightArrow" @click="handleScroll('right')"
-          class="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center hover:bg-blue-200">
-          <ChevronRight class="w-4 h-4 text-gray-700" />
+          class="w-7 h-7 rounded-full bg-blue-100 dark:bg-blue-700 flex items-center justify-center hover:bg-blue-200 dark:hover:bg-blue-600 transition-colors">
+          <ChevronRight class="w-4 h-4 text-blue-700 dark:text-blue-200" />
         </button>
 
         <input type="text" v-model="searchQuery"
           :placeholder="lang === 'bn' ? 'ট্যাগ বা শিরোনাম অনুসন্ধান করুন...' : 'Search by tag or title...'"
-          class="ml-3 px-3 py-1.5 border rounded text-sm flex-1 max-w-xs" />
+          class="ml-3 px-3 py-1.5 border rounded text-sm flex-1 max-w-xs bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-100 border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-500 transition-colors" />
 
-        <div class="text-xs text-gray-600 ml-3">
+        <div class="text-xs text-gray-600 dark:text-gray-300 ml-3">
           {{ lang === 'bn' ? filteredTutorials.length + ' টি' : filteredTutorials.length + ' results' }}
         </div>
       </div>
@@ -189,7 +191,7 @@ onMounted(() => {
 
     <!-- Tutorials Grid -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div v-if="displayedTutorials.length === 0" class="text-center py-20 text-gray-500">
+      <div v-if="displayedTutorials.length === 0" class="text-center py-20 text-gray-500 dark:text-gray-400">
         <h3 class="text-xl mb-2">{{ language.value === 'bn' ? 'কোন টিউটোরিয়াল পাওয়া যায়নি' : 'No tutorials found' }}</h3>
         <p>{{ language.value === 'bn' ? 'অন্য ফিল্টার চেষ্টা করুন' : 'Try different filters' }}</p>
       </div>
@@ -197,14 +199,14 @@ onMounted(() => {
       <div v-else class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div v-for="tutorial in displayedTutorials" :key="tutorial.id" 
              @click="goToTutorial(tutorial.id)"
-             class="group cursor-pointer border rounded shadow hover:shadow-lg overflow-hidden transition-all relative">
+             class="group cursor-pointer border dark:border-gray-700 rounded shadow hover:shadow-lg overflow-hidden transition-all relative bg-white dark:bg-gray-800">
 
-          <div class="relative aspect-video bg-gray-200 overflow-hidden">
+          <div class="relative aspect-video bg-gray-200 dark:bg-gray-700 overflow-hidden">
             <img :src="tutorial.thumbnail" :alt="tutorial.title"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-            <div class="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/60 transition-all">
-              <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform">
-                <Play class="w-8 h-8 text-blue-600 ml-1" />
+            <div class="absolute inset-0 bg-black/40 dark:bg-black/50 flex items-center justify-center group-hover:bg-black/60 transition-all">
+              <div class="w-16 h-16 bg-white/90 dark:bg-gray-200 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform">
+                <Play class="w-8 h-8 text-blue-600 dark:text-blue-500 ml-1" />
               </div>
             </div>
             <div class="absolute top-3 left-3">
@@ -215,13 +217,13 @@ onMounted(() => {
           </div>
 
           <div class="p-4">
-            <h3 class="text-lg mb-2 line-clamp-2">{{ tutorial.title }}</h3>
-            <p class="text-sm text-gray-600 mb-2 line-clamp-2">{{ tutorial.description }}</p>
-            <p class="text-sm text-gray-500 mb-2">
-              <span class="text-gray-700">{{ language.value === 'bn' ? 'প্রশিক্ষক: ' : 'Instructor:'}}</span>
+            <h3 class="text-lg mb-2 line-clamp-2 text-gray-900 dark:text-gray-100">{{ tutorial.title }}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300 mb-2 line-clamp-2">{{ tutorial.description }}</p>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+              <span class="text-gray-700 dark:text-gray-200">{{ language.value === 'bn' ? 'প্রশিক্ষক: ' : 'Instructor:'}}</span>
               {{ tutorial.instructorName }}
             </p>
-            <div class="flex items-center justify-between text-sm text-gray-500 pt-2 border-t border-gray-100">
+            <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 pt-2 border-t border-gray-100 dark:border-gray-700">
               <div class="flex items-center gap-1">
                 <Clock class="w-4 h-4" /><span>{{ tutorial.duration }} {{ language.value === 'bn' ? 'মিনিট' : 'min' }}</span>
               </div>
@@ -238,15 +240,15 @@ onMounted(() => {
       <div v-if="totalPages > 1" class="flex flex-col items-center gap-4 mt-6">
         <div class="flex items-center gap-2">
           <button @click="goToPage(currentPage - 1)" :disabled="currentPage === 1"
-            class="w-10 h-10 border rounded flex items-center justify-center">
+            class="w-10 h-10 border dark:border-gray-600 rounded flex items-center justify-center dark:text-gray-200 text-gray-800">
             <ChevronLeft class="w-4 h-4" />
           </button>
           <button v-for="page in totalPages" :key="page" @click="goToPage(page)"
-            :class="['w-10 h-10 border rounded flex items-center justify-center', currentPage === page ? 'bg-blue-600 text-white border-blue-600' : '']">
+            :class="['w-10 h-10 border dark:border-gray-600 rounded flex items-center justify-center', currentPage === page ? 'bg-blue-600 text-white border-blue-600 dark:bg-blue-500 dark:border-blue-500' : 'text-gray-800 dark:text-gray-200']">
             {{ page }}
           </button>
           <button @click="goToPage(currentPage + 1)" :disabled="currentPage === totalPages"
-            class="w-10 h-10 border rounded flex items-center justify-center">
+            class="w-10 h-10 border dark:border-gray-600 rounded flex items-center justify-center text-gray-800 dark:text-gray-200">
             <ChevronRight class="w-4 h-4" />
           </button>
         </div>

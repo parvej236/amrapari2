@@ -11,7 +11,7 @@ export const translations = {
     backToHome: "হোমে ফিরুন",
     backToSuccess: "সাফল্যে ফিরুন",
     
-    // Hero Section
+    // Hero
     heroTitle: "আমরা পারি",
     heroSubtitle: "কোয়ান্টারা প্রযুক্তি, বিজ্ঞান, খেলাধুলা ও সংস্কৃতিতে বিশ্বকে নেতৃত্ব দিতে প্রস্তুত।",
     heroTagline: "তারা জানে — সারা পৃথিবীই আমার।",
@@ -131,7 +131,7 @@ export const translations = {
     backToSuccess: "Back to Success",
     
     // Hero Section
-    heroTitle: "We Can",
+    heroTitle: "Amra Pari",
     heroSubtitle: "The Quantas are ready to lead the world with knowledge, skill, and courage.",
     heroTagline: "They believe — The world is ours.",
     heroMotivation: "Dream, Dare, Achieve",

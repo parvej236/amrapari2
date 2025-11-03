@@ -74,12 +74,12 @@ const categories = computed(() => [
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-16">
+  <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 pt-16 transition-colors duration-300">
     <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 text-center relative overflow-hidden shadow-lg">
+    <header class="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-800 dark:to-blue-900 text-white py-16 text-center relative overflow-hidden shadow-lg">
       <button
         @click="onBackToHome"
-        class="absolute left-4 top-4 flex items-center bg-white/20 hover:bg-white/40 text-white px-4 py-2 rounded-md transition"
+        class="absolute left-4 top-4 flex items-center bg-white/20 dark:bg-white/10 hover:bg-white/40 dark:hover:bg-white/20 text-white px-4 py-2 rounded-md transition"
       >
         <ArrowLeft class="w-4 h-4 mr-2" />
         {{ t.backToHome || 'Back to Home' }}
@@ -88,7 +88,7 @@ const categories = computed(() => [
       <h1 class="text-4xl sm:text-5xl font-bold mb-2 drop-shadow-md">
         {{ t.activitiesPageTitle || 'Student Activities' }}
       </h1>
-      <p class="text-lg sm:text-xl text-blue-100 max-w-3xl mx-auto">
+      <p class="text-lg sm:text-xl text-blue-100 dark:text-blue-200 max-w-3xl mx-auto">
         {{ t.activitiesPageSubtitle || 'Explore and participate in diverse learning experiences' }}
       </p>
     </header>
@@ -105,7 +105,7 @@ const categories = computed(() => [
             'px-5 py-2.5 rounded-full font-semibold flex items-center gap-2 shadow-sm transition-all duration-200',
             activeTab === cat.id
               ? 'bg-gradient-to-r from-blue-600 to-blue-400 text-white shadow-md scale-105'
-              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+              : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 border border-gray-200 dark:border-gray-600'
           ]"
         >
           <component :is="cat.icon" class="w-5 h-5" />
@@ -132,13 +132,12 @@ const categories = computed(() => [
               </div>
               <div>
                 <h2 class="text-3xl font-bold">{{ cat.title }}</h2>
-                <span class="text-sm bg-white/25 px-2 py-0.5 rounded-md backdrop-blur-sm">
-                  {{ cat.items.length }}
-                  {{ language.value === 'bn' ? 'টি কার্যক্রম' : 'Activities' }}
+                <span class="text-sm bg-white/25 dark:bg-white/10 px-2 py-0.5 rounded-md backdrop-blur-sm">
+                  {{ cat.items.length }} {{ language.value === 'bn' ? 'টি কার্যক্রম' : 'Activities' }}
                 </span>
               </div>
             </div>
-            <p class="text-white/90 text-lg">{{ cat.description }}</p>
+            <p class="text-white/90">{{ cat.description }}</p>
           </div>
         </div>
 
@@ -147,33 +146,33 @@ const categories = computed(() => [
           <div
             v-for="(item, index) in cat.items"
             :key="index"
-            class="p-5 rounded-xl bg-white border border-gray-200 hover:shadow-lg transition-all duration-200"
+            class="p-5 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-200"
           >
             <div class="flex items-center gap-4">
               <div :class="`w-9 h-9 ${cat.iconBg} rounded-md flex items-center justify-center text-white font-semibold`">
                 {{ index + 1 }}
               </div>
-              <span class="text-gray-800 font-medium">{{ item }}</span>
+              <span class="text-gray-800 dark:text-gray-200 font-medium">{{ item }}</span>
             </div>
           </div>
         </div>
 
         <!-- Sub-items (like athletics) -->
-        <div v-if="cat.subItems" class="mt-10 pt-6 border-t border-gray-200">
-          <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+        <div v-if="cat.subItems" class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-100">
             {{ cat.subItems.title }}
           </h3>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div
               v-for="(subItem, index) in cat.subItems.items"
               :key="index"
-              class="p-5 rounded-xl bg-gray-50 border border-gray-200 hover:shadow-md transition-all duration-200"
+              class="p-5 rounded-xl bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all duration-200"
             >
               <div class="flex items-center gap-4">
                 <div class="w-9 h-9 bg-gradient-to-br from-blue-600 to-blue-400 rounded-md flex items-center justify-center text-white font-semibold">
                   ★
                 </div>
-                <span class="text-gray-800 font-medium">{{ subItem }}</span>
+                <span class="text-gray-800 dark:text-gray-200 font-medium">{{ subItem }}</span>
               </div>
             </div>
           </div>
@@ -185,14 +184,8 @@ const categories = computed(() => [
 
 <style scoped>
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 .animate-fadeIn {
   animation: fadeIn 0.4s ease-in-out;

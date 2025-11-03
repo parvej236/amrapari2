@@ -1,87 +1,85 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue';
-import { GraduationCap, ChevronLeft, ChevronRight } from 'lucide-vue-next';
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { GraduationCap, ChevronLeft, ChevronRight } from 'lucide-vue-next'
+import { useLanguage } from '@/composables/useLanguage'
+import testimonials from '@/assets/data/testimonials.js'
 
-import { useLanguage } from '@/composables/useLanguage';
+const { t, language } = useLanguage()
 
-// Testimonials array (copy your array here or import from a file)
-import testimonials from '@/assets/data/testimonials.js';
-
-const { t, language } = useLanguage();
-
-const currentPage = ref(0);
-const itemsPerPage = ref(3);
+const currentPage = ref(0)
+const itemsPerPage = ref(3)
 
 const updateItemsPerPage = () => {
-  if (window.innerWidth < 768) {
-    itemsPerPage.value = 1;
-  } else if (window.innerWidth < 1024) {
-    itemsPerPage.value = 2;
-  } else {
-    itemsPerPage.value = 3;
-  }
-};
+  if (window.innerWidth < 768) itemsPerPage.value = 1
+  else if (window.innerWidth < 1024) itemsPerPage.value = 2
+  else itemsPerPage.value = 3
+}
 
-const totalPages = computed(() => Math.ceil(testimonials.length / itemsPerPage.value));
+const totalPages = computed(() => Math.ceil(testimonials.length / itemsPerPage.value))
 const currentTestimonials = computed(() => {
-  const start = currentPage.value * itemsPerPage.value;
-  return testimonials.slice(start, start + itemsPerPage.value);
-});
+  const start = currentPage.value * itemsPerPage.value
+  return testimonials.slice(start, start + itemsPerPage.value)
+})
 
-const goToNextPage = () => {
-  currentPage.value = (currentPage.value + 1) % totalPages.value;
-};
-const goToPreviousPage = () => {
-  currentPage.value = (currentPage.value - 1 + totalPages.value) % totalPages.value;
-};
+const goToNextPage = () => (currentPage.value = (currentPage.value + 1) % totalPages.value)
+const goToPreviousPage = () => (currentPage.value = (currentPage.value - 1 + totalPages.value) % totalPages.value)
 
 const handleKeyDown = (e) => {
-  if (e.key === 'ArrowLeft') goToPreviousPage();
-  if (e.key === 'ArrowRight') goToNextPage();
-};
+  if (e.key === 'ArrowLeft') goToPreviousPage()
+  if (e.key === 'ArrowRight') goToNextPage()
+}
 
 onMounted(() => {
-  updateItemsPerPage();
-  window.addEventListener('resize', updateItemsPerPage);
-  window.addEventListener('keydown', handleKeyDown);
-});
-
+  updateItemsPerPage()
+  window.addEventListener('resize', updateItemsPerPage)
+  window.addEventListener('keydown', handleKeyDown)
+})
 onUnmounted(() => {
-  window.removeEventListener('resize', updateItemsPerPage);
-  window.removeEventListener('keydown', handleKeyDown);
-});
+  window.removeEventListener('resize', updateItemsPerPage)
+  window.removeEventListener('keydown', handleKeyDown)
+})
 </script>
 
 <template>
-  <section class="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+  <section
+    class="py-16 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 transition-colors duration-500"
+  >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Title -->
+      <!-- Title -->
       <div class="text-center mb-12">
-        <h2 class="text-4xl sm:text-5xl mb-3 text-gray-900">{{ t.testimonialsTitle }}</h2>
-        <p class="text-base text-gray-600 max-w-2xl mx-auto">{{ t.testimonialsSubtitle }}</p>
+        <h2 class="text-4xl sm:text-5xl mb-3 text-gray-900 dark:text-white font-bold">
+          {{ t.testimonialsTitle }}
+        </h2>
+        <p class="text-base text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          {{ t.testimonialsSubtitle }}
+        </p>
         <div class="w-20 h-1 bg-gradient-to-r from-blue-600 to-green-600 mx-auto mt-4"></div>
       </div>
 
       <!-- Navigation -->
       <div class="relative">
-        <!-- Left Arrow -->
+        <!-- Left -->
         <button
           @click="goToPreviousPage"
-          class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-10 h-10 lg:w-12 lg:h-12 bg-white rounded-full shadow-lg hover:shadow-xl flex items-center justify-center text-gray-700 hover:text-blue-600 transition-all duration-300 hover:scale-110 z-10 border border-gray-200"
+          class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 w-10 h-10 lg:w-12 lg:h-12
+                 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center
+                 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400
+                 border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-110 z-10"
         >
           <ChevronLeft class="w-5 h-5 lg:w-6 lg:h-6" />
         </button>
 
-        <!-- Testimonials Grid -->
+        <!-- Testimonials -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div
             v-for="testimonial in currentTestimonials"
             :key="testimonial.id"
-            class="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 flex flex-col h-full"
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 p-6
+                   border border-gray-100 dark:border-gray-700 flex flex-col h-full"
           >
-            <!-- Profile Image -->
+            <!-- Profile -->
             <div class="flex justify-center mb-3 relative">
-              <div class="w-16 h-16 rounded-full overflow-hidden shadow-md ring-2 ring-blue-100">
+              <div class="w-16 h-16 rounded-full overflow-hidden shadow-md ring-2 ring-blue-100 dark:ring-blue-700">
                 <img
                   :src="testimonial.image"
                   :alt="testimonial.name[language]"
@@ -89,42 +87,55 @@ onUnmounted(() => {
                 />
               </div>
               <div
-                class="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-blue-200 to-blue-600 rounded-full flex items-center justify-center shadow-md"
+                class="absolute -bottom-1 -right-1 w-6 h-6 bg-gradient-to-br from-blue-200 to-blue-600 dark:from-blue-600 dark:to-blue-800
+                       rounded-full flex items-center justify-center shadow-md"
               >
                 <GraduationCap class="w-3.5 h-3.5 text-white" />
               </div>
             </div>
 
             <!-- Name -->
-            <h3 class="text-center text-base text-gray-900 mb-1">{{ testimonial.name[language] }}</h3>
-
-            <!-- Institution & Year -->
-            <p class="text-center text-xs text-gray-500 mb-2">{{ testimonial.institution[language] }}</p>
-            <p class="text-center text-xs text-blue-600 mb-3">{{ testimonial.year[language] }}</p>
+            <h3 class="text-center text-base text-gray-900 dark:text-gray-100 mb-1 font-semibold">
+              {{ testimonial.name[language] }}
+            </h3>
+            <p class="text-center text-xs text-gray-500 dark:text-gray-400 mb-2">
+              {{ testimonial.institution[language] }}
+            </p>
+            <p class="text-center text-xs text-blue-600 dark:text-blue-400 mb-3">
+              {{ testimonial.year[language] }}
+            </p>
 
             <!-- Quote -->
-            <div class="relative mb-4 flex-grow bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-4 border-l-4 border-blue-500">
-              <div class="absolute -top-1 -left-1 text-5xl text-blue-400 leading-none font-serif">"</div>
-              <p class="text-center text-base text-gray-900 font-bold italic leading-relaxed px-3 pt-2">
+            <div
+              class="relative mb-4 flex-grow bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-700 dark:to-gray-800
+                     rounded-lg p-4 border-l-4 border-blue-500 dark:border-blue-400"
+            >
+              <div class="absolute -top-1 -left-1 text-5xl text-blue-400 dark:text-blue-600 leading-none font-serif">"</div>
+              <p class="text-center text-base text-gray-900 dark:text-gray-100 font-bold italic leading-relaxed px-3 pt-2">
                 {{ testimonial.quote[language] }}
               </p>
-              <div class="absolute -bottom-2 -right-1 text-5xl text-blue-400 leading-none font-serif rotate-180">"</div>
+              <div class="absolute -bottom-2 -right-1 text-5xl text-blue-400 dark:text-blue-600 leading-none font-serif rotate-180">
+                "
+              </div>
             </div>
 
-            <!-- Session & Quanta ID -->
-            <div class="pt-3 border-t border-gray-100">
-              <div class="flex flex-col items-center gap-1 text-xs text-gray-400">
+            <!-- Session & ID -->
+            <div class="pt-3 border-t border-gray-100 dark:border-gray-700">
+              <div class="flex flex-col items-center gap-1 text-xs text-gray-400 dark:text-gray-500">
                 <span>{{ testimonial.session[language] }}</span>
-                <span class="text-gray-800 font-bold">{{ testimonial.quantaId }}</span>
+                <span class="text-gray-800 dark:text-gray-200 font-bold">{{ testimonial.quantaId }}</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Arrow -->
+        <!-- Right -->
         <button
           @click="goToNextPage"
-          class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-10 h-10 lg:w-12 lg:h-12 bg-white rounded-full shadow-lg hover:shadow-xl flex items-center justify-center text-gray-700 hover:text-blue-600 transition-all duration-300 hover:scale-110 z-10 border border-gray-200"
+          class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 w-10 h-10 lg:w-12 lg:h-12
+                 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl flex items-center justify-center
+                 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400
+                 border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:scale-110 z-10"
         >
           <ChevronRight class="w-5 h-5 lg:w-6 lg:h-6" />
         </button>
@@ -139,23 +150,22 @@ onUnmounted(() => {
           :class="[
             'transition-all duration-300 rounded-full',
             currentPage === index - 1
-              ? 'w-8 h-2 bg-gradient-to-r from-blue-600 to-blue-400'
-              : 'w-2 h-2 bg-gray-300 hover:bg-gray-400'
+              ? 'w-8 h-2 bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-300'
+              : 'w-2 h-2 bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
           ]"
         />
       </div>
 
-      <!-- Additional Info -->
+      <!-- Footer Note -->
       <div class="mt-12 text-center">
-        <p class="text-sm text-gray-500">
-          {{ language === 'bn'
-            ? '💙 আরও অনেক কোয়ান্টারা দেশ-বিদেশে সফলতার পথে এগিয়ে চলেছে'
-            : '💙 Many more Quantars are moving forward on the path of success at home and abroad'
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          {{
+            language === 'bn'
+              ? '💙 আরও অনেক কোয়ান্টারা দেশ-বিদেশে সফলতার পথে এগিয়ে চলেছে'
+              : '💙 Many more Quantars are moving forward on the path of success at home and abroad'
           }}
         </p>
       </div>
     </div>
   </section>
 </template>
-
-
