@@ -134,7 +134,7 @@ const steps = [
           </div>
 
           <!-- Connector -->
-          <div v-if="index !== steps.length - 1" class="flex justify-center mt-12 lg:mt-16">
+          <div v-if="index !== steps.length - 1" class="animate-bounce flex justify-center mt-12 lg:mt-16">
             <div
               :class="`w-12 h-12 rounded-full ${step.bgColor} flex items-center justify-center ${step.color} shadow-lg dark:shadow-none`"
             >
