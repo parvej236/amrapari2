@@ -19,11 +19,10 @@ const activities = [
 <template>
   <section
     class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0a0e27] via-[#16213e] to-[#0f3460] px-4 sm:px-6 lg:px-8">
-    <div class="absolute inset-0 z-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950"></div>
+    <div class="absolute mt-1 inset-0 z-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950"></div>
 
     <div
       class="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-8 sm:gap-12 min-h-[auto] lg:min-h-screen">
-
       <!-- Left section-->
       <div class="flex-1 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
         <div
@@ -50,7 +49,7 @@ const activities = [
       </div>
 
       <!-- Right Section: Earth Video and Animated Activities -->
-      <div class="flex-1 flex items-center justify-center mt-10 lg:mt-0">
+      <div class="flex-1 flex items-center justify-center mt-0 lg:mt-0">
         <div class="w-64 h-64 sm:w-72 sm:h-72 relative rounded-full overflow-hidden shadow-2xl">
           <!-- Earth Video -->
           <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-full"
