@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useLanguage } from '@/composables/useLanguage'
-import { Sunrise, Trophy, BookOpen } from 'lucide-vue-next'
+import { Sunrise, Trophy, Play } from 'lucide-vue-next'
 import { RouterLink } from 'vue-router'
 
 const { t, language } = useLanguage()
@@ -37,13 +37,15 @@ const activities = [
 
         <div class="flex gap-4 justify-center lg:justify-start">
           <RouterLink to="/success-stories"
-            class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-2 rounded-full shadow-lg hover:shadow-xl transition-all">
+            class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-5 py-2 rounded-full shadow-lg hover:shadow-xl transition-all">
             <Trophy class="w-5 h-5" /> {{ t.successStories }}
           </RouterLink>
-
           <RouterLink to="/tutorials"
-            class="flex items-center gap-2 border-2 border-purple-300/60 text-purple-100 hover:bg-purple-500/30 hover:text-white px-4 py-2 rounded-full transition-all">
-            <BookOpen class="w-5 h-5" /> {{ t.tutorialsButton }}
+            class="relative group px-[1.5px] py-[1.5px] rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-green-600 bg-[length:200%_200%] animate-border">
+            <div
+              class="flex items-center gap-2 px-5 py-2 rounded-full bg-[#0a0e27] text-purple-100 group-hover:bg-green-500/20 transition-all duration-300">
+              <Play class="w-5 h-5" /> {{ t.tutorialsButton }}
+            </div>
           </RouterLink>
         </div>
       </div>
@@ -108,5 +110,23 @@ const activities = [
   width: max-content;
   animation: slide 20s linear infinite;
   transform-origin: center;
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-border {
+  animation: borderMove 4s linear infinite;
 }
 </style>
