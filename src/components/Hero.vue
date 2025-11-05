@@ -85,7 +85,7 @@ const activities = [
 <style scoped>
 @keyframes slide {
   0% {
-    transform: translateX(0) scale(0.3);
+    transform: translateX(0) scale(0.6);
     opacity: 0.6;
   }
 
