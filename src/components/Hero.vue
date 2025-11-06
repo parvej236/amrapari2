@@ -85,7 +85,7 @@ const activities = [
 <style scoped>
 @keyframes slide {
   0% {
-    transform: translateX(0) scale(0.6);
+    transform: translateX(0) scale(0.9);
     opacity: 0.6;
   }
 
@@ -109,7 +109,6 @@ const activities = [
   display: flex;
   width: max-content;
   animation: slide 20s linear infinite;
-  transform-origin: center;
 }
 
 @keyframes borderMove {
