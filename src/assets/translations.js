@@ -20,7 +20,7 @@ export const translations = {
     heroContent5: "আমার জীবন",
     heroContent6: "আমিই গড়বো",
     heroSubtitle: "কোয়ান্টারা প্রযুক্তি, বিজ্ঞান, খেলাধুলা ও সংস্কৃতিতে বিশ্বকে নেতৃত্ব দিতে প্রস্তুত।",
-    heroTagline: "সারা পৃথিবীই আমার।",
+    heroTagline: "সারা পৃথিবী আমার।",
     heroMotivation: "স্বপ্ন দেখো, সাহস করো, জয় করো",
     viewVision: "আমাদের ভিশন দেখুন",
     contactUs: "যোগাযোগ করুন",
