@@ -32,13 +32,14 @@ const activities = [
         </div> -->
 
         <!-- <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">{{ t.heroTitle }}</h1> -->
-        <p class="text-3xl sm:text-xl text-blue-200">{{ t.heroContent1 }}</p>
-        <p class="text-3xl sm:text-xl text-blue-200">{{ t.heroContent2 }}</p>
-        <p class="text-3xl sm:text-xl text-blue-200">{{ t.heroContent3 }}</p>
-        <p class="text-3xl sm:text-xl text-blue-200">{{ t.heroContent4 }}</p>
-        <p class="text-3xl sm:text-xl text-blue-200">{{ t.heroContent5 }}</p>
-        <p class="text-3xl sm:text-xl text-blue-200">{{ t.heroContent6 }}</p>
-        <p class="text-5xl sm:text-lg text-green-200">{{ t.heroTagline }}</p>
+         
+        <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent1 }}</p>
+        <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent2 }}</p>
+        <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent3 }}</p>
+        <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent4 }}</p>
+        <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent5 }}</p>
+        <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent6 }}</p>
+        <p class="text-lg sm:text-xl lg:text-2xl text-green-200">{{ t.heroTagline }}</p>
 
         <!-- <div class="flex gap-4 justify-center lg:justify-start">
           <RouterLink to="/success-stories"
