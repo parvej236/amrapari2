@@ -102,11 +102,11 @@ export const translations = {
     readMore: "আরও পড়ুন",
     noResults: "কোন ফলাফল পাওয়া যায়নি",
     
-    // Tutorials
+    // Courses
     tutorialsTitle: "কোর্সসমূহ",
-    tutorialsDesc: "কোয়ান্টারা নিজেরাই শেখায় — প্রোগ্রামিং, বিজ্ঞান এক্সপেরিমেন্ট, ক্রিয়েটিভ আর্টস ও বিভিন্ন স্কিল টিউটোরিয়ালের মাধ্যমে।",
-    exploreTutorials: "সব টিউটোরিয়াল দেখুন",
-    tutorialNotFound: "টিউটোরিয়াল পাওয়া যায়নি।",
+    tutorialsDesc: "কোয়ান্টারা নিজেরাই শেখায় — প্রোগ্রামিং, বিজ্ঞান এক্সপেরিমেন্ট, ক্রিয়েটিভ আর্টস ও বিভিন্ন স্কিল কোর্সের মাধ্যমে।",
+    exploreTutorials: "কোর্সসমূহ দেখুন",
+    tutorialNotFound: "কোর্স পাওয়া যায়নি।",
 
     
     // Campus
@@ -228,11 +228,11 @@ export const translations = {
     readMore: "Read More",
     noResults: "No results found",
     
-    // Tutorials
+    // Courses
     tutorialsTitle: "Courses",
-    tutorialsDesc: "Quantas teach through their own tutorials — covering programming, science experiments, art, and skill-based learning.",
-    exploreTutorials: "Explore Tutorials",
-    tutorialNotFound: 'Tutorial not found.',
+    tutorialsDesc: "Quantas teach through their own courses — covering programming, science experiments, art, and skill-based learning.",
+    exploreTutorials: "Explore Courses",
+    tutorialNotFound: 'Course not found.',
     
     // Campus
     campusTitle: "Dreaming Campus",

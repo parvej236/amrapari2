@@ -2,6 +2,7 @@
 import { useLanguage } from '@/composables/useLanguage'
 import { Code, Beaker, Palette, Trophy, Music } from 'lucide-vue-next'
 import { computed } from 'vue'
+import BaseButton from '@/components/BaseButton.vue'
 
 const { t } = useLanguage()
 
@@ -102,10 +103,7 @@ const activities = computed(() => [
           </p>
           <!-- Explore Button -->
           <div class="text-center">
-            <RouterLink to="/tutorials"
-              class="inline-block mt-2 hover:bg-blue-700 dark:bg-blue-500 dark:text-white dark:hover:bg-blue-400 text-blue-700 hover:text-white px-6 py-2 rounded-full shadow-md text-sm transition-all duration-300">
-              {{ t.exploreActivity }}
-            </RouterLink>
+            <BaseButton to="/tutorials" :label="t.exploreActivity" />
           </div>
         </div>
       </div>

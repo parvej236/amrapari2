@@ -14,7 +14,7 @@ import {
   Search,
   RefreshCcw
 } from 'lucide-vue-next'
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import successStories from '@/assets/data/successStories.js'
 import { useLanguage } from '@/composables/useLanguage'
 
@@ -105,7 +105,7 @@ const categoryColors = {
       <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 dark:bg-white/5 rounded-full blur-3xl"></div>
       <div class="absolute bottom-0 left-0 w-48 h-48 bg-blue-900/20 dark:bg-blue-800/20 rounded-full blur-2xl"></div>
 
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-2">
         <button @click="$router.push('/')"
           class="flex items-center text-white bg-white/20 hover:bg-white/40 dark:bg-gray-700/20 dark:hover:bg-gray-700/40 my-2 mb-4 px-3 py-2 rounded-md transition">
           <ArrowLeft class="w-4 h-4 mr-2" />

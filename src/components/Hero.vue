@@ -32,7 +32,6 @@ const activities = [
         </div> -->
 
         <!-- <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">{{ t.heroTitle }}</h1> -->
-         
         <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent1 }}</p>
         <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent2 }}</p>
         <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent3 }}</p>
@@ -40,6 +39,11 @@ const activities = [
         <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent5 }}</p>
         <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent6 }}</p>
         <p class="text-lg sm:text-xl lg:text-2xl text-green-200">{{ t.heroTagline }}</p>
+
+        <!-- <div
+          class="inline-flex items-center gap-2 px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-md shadow-lg border rounded-lg border-cyan-300/30">
+          <span class="text-lg sm:text-xl lg:text-2xl text-green-200">{{ t.heroTagline }}</span>
+        </div> -->
 
         <!-- <div class="flex gap-4 justify-center lg:justify-start">
           <RouterLink to="/success-stories"
