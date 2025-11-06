@@ -95,17 +95,14 @@ const achievements = computed(() => [
           <p class="text-xs text-gray-600 dark:text-gray-400">
             {{ achievement.label }}
           </p>
+                    <!-- Explore Button -->
+          <div class="text-center">
+            <RouterLink to="/sucess-stories"
+              class="inline-block mt-2 hover:bg-blue-700 dark:bg-blue-500 dark:text-white dark:hover:bg-blue-400 text-blue-700 hover:text-white px-6 py-2 rounded-full shadow-md text-sm transition-all duration-300">
+              {{ t.exploreActivity }}
+            </RouterLink>
+          </div>
         </div>
-      </div>
-
-      <!-- Button -->
-      <div class="text-center">
-        <RouterLink
-          to="/success-stories"
-          class="inline-block bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 text-white px-6 py-2 rounded-full shadow-md text-sm transition-all duration-300"
-        >
-          {{ t.viewAll }}
-        </RouterLink>
       </div>
     </div>
   </section>

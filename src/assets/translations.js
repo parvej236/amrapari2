@@ -5,7 +5,7 @@ export const translations = {
     about: "পরিচয়",
     activities: "কার্যক্রম",
     success: "সাফল্য",
-    tutorials: "টিউটোরিয়াল",
+    tutorials: "কোর্সসমুহ",
     campus: "ক্যাম্পাস",
     contact: "যোগাযোগ",
     backToHome: "হোমে ফিরুন",
@@ -86,6 +86,7 @@ export const translations = {
       "ড্রাম", "কট গ্রাম", "সাইড ড্রাম", "টেনর ড্রাম", "বিগ ড্রাম",
       "ইউফোনিয়াম", "ট্রামপিট", "ক্লারিনেট", "সেক্সোফোন", "বিগল", "পাইপ"
     ],
+    exploreActivity: "ঘুরে দেখুন",
     
     // Success
     successTitle: "সাফল্য",
@@ -100,7 +101,7 @@ export const translations = {
     noResults: "কোন ফলাফল পাওয়া যায়নি",
     
     // Tutorials
-    tutorialsTitle: "টিউটোরিয়াল",
+    tutorialsTitle: "কোর্সসমূহ",
     tutorialsDesc: "কোয়ান্টারা নিজেরাই শেখায় — প্রোগ্রামিং, বিজ্ঞান এক্সপেরিমেন্ট, ক্রিয়েটিভ আর্টস ও বিভিন্ন স্কিল টিউটোরিয়ালের মাধ্যমে।",
     exploreTutorials: "সব টিউটোরিয়াল দেখুন",
     tutorialNotFound: "টিউটোরিয়াল পাওয়া যায়নি।",
@@ -128,7 +129,7 @@ export const translations = {
     about: "About",
     activities: "Activities",
     success: "Success",
-    tutorials: "Tutorials",
+    tutorials: "Courses",
     campus: "Campus",
     contact: "Contact",
     backToHome: "Back to Home",
@@ -209,6 +210,7 @@ export const translations = {
       "Drum", "Quad Tom", "Side Drum", "Tenor Drum", "Bass Drum",
       "Euphonium", "Trumpet", "Clarinet", "Saxophone", "Bugle", "Pipe"
     ],
+    exploreActivity: "Explore",
     
     // Success
     successTitle: "Success",
@@ -223,7 +225,7 @@ export const translations = {
     noResults: "No results found",
     
     // Tutorials
-    tutorialsTitle: "Tutorials",
+    tutorialsTitle: "Courses",
     tutorialsDesc: "Quantas teach through their own tutorials — covering programming, science experiments, art, and skill-based learning.",
     exploreTutorials: "Explore Tutorials",
     tutorialNotFound: 'Tutorial not found.',

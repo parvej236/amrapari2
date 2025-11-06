@@ -31,7 +31,7 @@ const activities = [
           <span class="text-white text-sm font-medium">{{ t.heroMotivation }}</span>
         </div> -->
 
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">{{ t.heroTitle }}</h1>
+        <!-- <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">{{ t.heroTitle }}</h1> -->
         <p class="text-lg sm:text-xl text-blue-200">{{ t.heroContent1 }}</p>
         <p class="text-lg sm:text-xl text-blue-200">{{ t.heroContent2 }}</p>
         <p class="text-lg sm:text-xl text-blue-200">{{ t.heroContent3 }}</p>
