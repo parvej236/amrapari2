@@ -24,18 +24,21 @@ const activities = [
     <div
       class="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-8 sm:gap-12 min-h-[auto] lg:min-h-screen">
       <!-- Left section-->
-      <div class="flex-1 flex flex-col items-center lg:items-start space-y-6 text-center lg:text-left">
-        <div
+      <div class="flex-1 flex flex-col items-center space-y-4 text-center lg:text-left">
+        <!-- <div
           class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-md rounded-full shadow-lg border border-cyan-300/30">
           <Sunrise class="w-4 h-4 text-yellow-300 animate-pulse" />
           <span class="text-white text-sm font-medium">{{ t.heroMotivation }}</span>
-        </div>
+        </div> -->
 
         <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white">{{ t.heroTitle }}</h1>
-        <p class="text-lg sm:text-xl text-blue-200">{{ t.heroSubtitle }}</p>
-        <p class="text-base sm:text-lg text-purple-200 italic">{{ t.heroTagline }}</p>
+        <p class="text-lg sm:text-xl text-blue-200">{{ t.heroContent1 }}</p>
+        <p class="text-lg sm:text-xl text-blue-200">{{ t.heroContent2 }}</p>
+        <p class="text-lg sm:text-xl text-blue-200">{{ t.heroContent3 }}</p>
+        <p class="text-lg sm:text-xl text-blue-200">{{ t.heroContent4 }}</p>
+        <p class="text-base sm:text-lg text-green-200">{{ t.heroTagline }}</p>
 
-        <div class="flex gap-4 justify-center lg:justify-start">
+        <!-- <div class="flex gap-4 justify-center lg:justify-start">
           <RouterLink to="/success-stories"
             class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-5 py-2 rounded-full shadow-lg hover:shadow-xl transition-all">
             <Trophy class="w-5 h-5" /> {{ t.successStories }}
@@ -47,7 +50,7 @@ const activities = [
               <Play class="w-5 h-5" /> {{ t.tutorialsButton }}
             </div>
           </RouterLink>
-        </div>
+        </div> -->
       </div>
 
       <!-- Right Section: Earth Video and Animated Activities -->

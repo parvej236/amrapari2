@@ -13,8 +13,12 @@ export const translations = {
     
     // Hero
     heroTitle: "আমরা পারি",
+    heroContent1: "আমি পারি",
+    heroContent2: "আমি করবো",
+    heroContent3: "আমার জীবন",
+    heroContent4: "আমিই গড়বো",
     heroSubtitle: "কোয়ান্টারা প্রযুক্তি, বিজ্ঞান, খেলাধুলা ও সংস্কৃতিতে বিশ্বকে নেতৃত্ব দিতে প্রস্তুত।",
-    heroTagline: "তারা জানে — সারা পৃথিবীই আমার।",
+    heroTagline: "সারা পৃথিবীই আমার।",
     heroMotivation: "স্বপ্ন দেখো, সাহস করো, জয় করো",
     viewVision: "আমাদের ভিশন দেখুন",
     contactUs: "যোগাযোগ করুন",
@@ -22,11 +26,11 @@ export const translations = {
     tutorialsButton: "টিউটোরিয়াল",
     
     // Testimonials Section
-    testimonialsTitle: "কোয়ান্টারা বলে",
+    testimonialsTitle: "আমাদের কথা",
     testimonialsSubtitle: "কোয়ান্টাম ছাত্রছাত্রীদের বাস্তব গল্প যারা এখন বিশ্ববিদ্যালয় ও মেডিকেল কলেজে আলো ছড়াচ্ছে।",
     
     // Why Quantars Can Section
-    whyQuantarsTitle: "কোয়ান্টারা কেন পারে",
+    whyQuantarsTitle: "আমাদের সাফল্যের রহস্য",
     whyQuantarsSubtitle: "কোয়ান্টাম ছাত্ররা শুধু শিক্ষার্থী নয়, তারা শৃঙ্খলা, জ্ঞান, দক্ষতা, স্বাস্থ্য এবং মনোযোগ দ্বারা গড়া ভবিষ্যৎ নেতা।",
     journeySixSteps: "প্রতিটি দিনের ৬টি ধাপে একজন কোয়ান্টার সফলতার যাত্রা",
     step1Title: "সূর্যের আগে ওঠা – যেখানে সাফল্য শুরু",
@@ -133,7 +137,11 @@ export const translations = {
     // Hero Section
     heroTitle: "Amra Pari",
     heroSubtitle: "The Quantas are ready to lead the world with knowledge, skill, and courage.",
-    heroTagline: "They believe — The world is ours.",
+    heroTagline: "The world is mine.",
+    heroContent1: "I Can",
+    heroContent2: "I Will",
+    heroContent3: "My Life",
+    heroContent4: "I Build",
     heroMotivation: "Dream, Dare, Achieve",
     viewVision: "View Our Vision",
     contactUs: "Contact Us",
@@ -141,11 +149,11 @@ export const translations = {
     tutorialsButton: "Tutorials",
     
     // Testimonials Section
-    testimonialsTitle: "Voices of the Quanta's",
+    testimonialsTitle: "Voices of the Our's",
     testimonialsSubtitle: "Real stories of Quantum students now shining in universities and medical colleges.",
     
     // Why Quantars Can Section
-    whyQuantarsTitle: "Why Quanta's Can",
+    whyQuantarsTitle: "The Secret of Our Success",
     whyQuantarsSubtitle: "Quantum students are not just learners, they are future leaders shaped by discipline, knowledge, skills, health, and mindfulness.",
     journeySixSteps: "A Quanta's Journey to Success in 6 Daily Steps",
     step1Title: "Rise Before the Sun – Where Success Begins",
