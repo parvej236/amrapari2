@@ -13,11 +13,11 @@ import Contact from '@/components/Contact.vue';
 <template>
   <Hero />
   <Testimonials />
-  <WhyQuantaCan />
   <About />
-  <Vision />
   <Activities />
   <Success />
+  <WhyQuantaCan />
+  <Vision />
   <Tutorials />
   <Contact />
 </template>

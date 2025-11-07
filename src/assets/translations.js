@@ -58,7 +58,7 @@ export const translations = {
     visionQuote: "আমরা বিশ্বাস করি, প্রতিটি কোয়ান্টা আলাদা, আর প্রত্যেকের মধ্যেই পরিবর্তন আনার ক্ষমতা আছে।",
     
     // Activities
-    activitiesTitle: "সব কার্যক্রম",
+    activitiesTitle: "আমাদের সব কার্যক্রম",
     activitiesPageTitle: "আমাদের সব কার্যক্রম",
     activitiesPageSubtitle: "কোয়ান্টারা যেভাবে শিখছে, বাড়ছে এবং এগিয়ে যাচ্ছে",
     exploreAll: "বিস্তারিত দেখুন",
@@ -91,7 +91,7 @@ export const translations = {
     exploreActivity: "ঘুরে দেখুন",
     
     // Success
-    successTitle: "সাফল্য",
+    successTitle: "আমাদের সাফল্য",
     successDesc: "কোয়ান্টারা জাতীয় পর্যায়ে খেলাধুলা, বিতর্ক, বিজ্ঞান মেলা ও সাংস্কৃতিক প্রতিযোগিতায় বারবার সাফল্য অর্জন করেছে।",
     viewAll: "বিস্তারিত দেখুন",
     successPageTitle: "আমাদের সাফল্যের গল্প",
@@ -103,7 +103,7 @@ export const translations = {
     noResults: "কোন ফলাফল পাওয়া যায়নি",
     
     // Courses
-    tutorialsTitle: "কোর্সসমূহ",
+    tutorialsTitle: "আমাদের কোর্সসমূহ",
     tutorialsDesc: "কোয়ান্টারা নিজেরাই শেখায় — প্রোগ্রামিং, বিজ্ঞান এক্সপেরিমেন্ট, ক্রিয়েটিভ আর্টস ও বিভিন্ন স্কিল কোর্সের মাধ্যমে।",
     exploreTutorials: "কোর্সসমূহ দেখুন",
     tutorialNotFound: "কোর্স পাওয়া যায়নি।",
