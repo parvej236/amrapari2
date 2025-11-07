@@ -141,11 +141,11 @@ onMounted(() => {
           {{ t.backToHome }}
         </button>
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight animate-fadeInUp">
-          {{ lang === 'bn' ? 'টিউটোরিয়াল' : 'Tutorials' }}
+          {{ lang === 'bn' ? 'কোর্সসমুহ' : 'Courses' }}
         </h1>
         <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-blue-100 dark:text-blue-200 animate-fadeInUp delay-200">
           {{ lang === 'bn'
-            ? 'প্রযুক্তি, বিজ্ঞান, সৃজনশীলতা, খেলাধুলা এবং সংগীতে দক্ষতা অর্জনের জন্য কোয়ান্টাদের তৈরি টিউটোরিয়াল'
+            ? 'প্রযুক্তি, বিজ্ঞান, সৃজনশীলতা, খেলাধুলা এবং সংগীতে দক্ষতা অর্জনের জন্য আমাদের তৈরি কোর্সসমুহ'
             : 'Tutorials created to develop skills in technology, science, creativity, sports, and music.' }}
         </p>
       </div>
