@@ -21,8 +21,7 @@ const activities = [
     class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#0a0e27] via-[#16213e] to-[#0f3460] px-4 sm:px-6 lg:px-8">
     <div class="absolute mt-1 inset-0 z-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950"></div>
 
-    <div
-      class="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-8 sm:gap-12 min-h-[auto] lg:min-h-screen">
+    <div class="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full max-w-7xl gap-8 sm:gap-12 min-h-[auto] lg:min-h-screen">
       <!-- Left section-->
       <div class="flex-1 flex flex-col items-center space-y-2 text-center lg:text-left lg:items-start">
         <!-- <div
@@ -39,36 +38,16 @@ const activities = [
         <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent5 }}</p>
         <p class="text-lg sm:text-xl lg:text-2xl text-blue-200">{{ t.heroContent6 }}</p>
         <p class="text-lg sm:text-xl lg:text-2xl text-green-200">{{ t.heroTagline }}</p>
-
-        <!-- <div
-          class="inline-flex items-center gap-2 px-2 py-1 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 backdrop-blur-md shadow-lg border rounded-lg border-cyan-300/30">
-          <span class="text-lg sm:text-xl lg:text-2xl text-green-200">{{ t.heroTagline }}</span>
-        </div> -->
-
-        <!-- <div class="flex gap-4 justify-center lg:justify-start">
-          <RouterLink to="/success-stories"
-            class="flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-5 py-2 rounded-full shadow-lg hover:shadow-xl transition-all">
-            <Trophy class="w-5 h-5" /> {{ t.successStories }}
-          </RouterLink>
-          <RouterLink to="/tutorials"
-            class="relative group px-[1.5px] py-[1.5px] rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-green-600 bg-[length:200%_200%] animate-border">
-            <div
-              class="flex items-center gap-2 px-5 py-2 rounded-full bg-[#0a0e27] text-purple-100 group-hover:bg-green-500/20 transition-all duration-300">
-              <Play class="w-5 h-5" /> {{ t.tutorialsButton }}
-            </div>
-          </RouterLink>
-        </div> -->
       </div>
 
       <!-- Right Section: Earth Video and Animated Activities -->
-      <div class="flex-1 flex items-center justify-center mt-0 lg:mt-0">
+      <div class="flex-1 flex items-center justify-start mt-0 lg:mt-0">
         <div class="w-64 h-64 sm:w-72 sm:h-72 relative rounded-full overflow-hidden shadow-2xl">
           <!-- Earth Video -->
           <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover rounded-full"
             style="transform: scale(1.8)">
             <source src="https://cdn.pixabay.com/video/2016/08/24/4788-180289892_large.mp4" type="video/mp4" />
           </video>
-
           <!-- Animated Activities (Seamless continuous scroll) -->
           <div class="absolute inset-0 flex items-center justify-center">
             <div class="relative w-full h-[2rem] overflow-hidden flex items-center justify-center">
@@ -85,7 +64,6 @@ const activities = [
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
