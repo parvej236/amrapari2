@@ -84,7 +84,7 @@ const toggleDarkMode = () => {
           </RouterLink>
 
           <!-- Success Stories -->
-          <RouterLink
+          <!-- <RouterLink
             to="/success-stories"
             :class="[
               'px-3 py-2 rounded-md transition-colors duration-200',
@@ -94,7 +94,7 @@ const toggleDarkMode = () => {
             ]"
           >
             {{ t.success }}
-          </RouterLink>
+          </RouterLink> -->
 
           <!-- Tutorials -->
           <RouterLink
