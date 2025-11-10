@@ -6,6 +6,7 @@ import SuccessDetailsView from '@/views/SuccessDetailsView.vue';
 import TutorialsView from '@/views/TutorialsView.vue';
 import TutorialDetailsView from '@/views/TutorialDetailsView.vue';
 import ActivitiesView from '@/views/ActivitiesView.vue';
+import CampusView from '@/views/CampusView.vue';
 
 const routes = [
   {
@@ -38,6 +39,11 @@ const routes = [
     path: '/activities',
     name: 'Activities',
     component: ActivitiesView
+  },
+  {
+    path: '/campus',
+    name: 'Campus',
+    component: CampusView
   },
   {
     path: '/:catchAll(.*)*',
