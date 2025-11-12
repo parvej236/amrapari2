@@ -49,9 +49,7 @@ const toggleDarkMode = () => {
 </script>
 
 <template>
-  <nav
-    class="fixed top-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm z-50 transition-colors duration-300"
-  >
+  <nav class="fixed top-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm shadow-sm z-50 transition-colors duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
@@ -59,7 +57,7 @@ const toggleDarkMode = () => {
           <img
             src="@/assets/img/quantum-logo.png"
             alt="Logo"
-            class="h-12 w-12"
+            class="h-12 w-12 rounded-full object-cover"
           />
           <span
             class="text-blue-800 dark:text-blue-300 text-2xl sm:text-3xl font-bold"
