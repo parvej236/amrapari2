@@ -57,7 +57,7 @@ const toggleDarkMode = () => {
         <!-- Logo -->
         <RouterLink class="flex items-center gap-3 cursor-pointer" to="/">
           <img
-            src="https://i.postimg.cc/yNjNMBdv/quantum-logo.png"
+            src="@/assets/img/quantum-logo.png"
             alt="Logo"
             class="h-12 w-12"
           />
